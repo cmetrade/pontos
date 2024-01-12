@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('Login to investing', function (){
+describe('Login to investing and get XAU ', function (){
 
     it('capturar dados xau', function(){
        cy.visit('https://br.investing.com/currencies/xau-usd-historical-data')
