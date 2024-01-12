@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Login to investing', function (){
+describe('Login to investing and get DX', function (){
 
     it('capturar dados dx', function(){
         cy.visit('https://br.investing.com/currencies/us-dollar-index')
