@@ -2,6 +2,7 @@
 describe('Capture CME Yahoo finance', function (){
 
     it('capturar dados cme', function(){
+
        cy.visit('https://finance.yahoo.com/quote/6LG24.CME/history?p=6LG24.CME')
 
             // open
