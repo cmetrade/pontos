@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
 
-describe('Login to investing and get DX', function (){
+describe('DX', function (){
     Cypress.config('defaultCommandTimeout', 10000);
-    it('capturar dados dx', function(){
+    it('DX', function(){
         cy.visit('https://br.investing.com/currencies/us-dollar-index-historical-data')
         
         
