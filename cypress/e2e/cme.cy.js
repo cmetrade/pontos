@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe('CME', function (){
 
-    it('capturar dados cme', function(){
+    it('capturar dados cme yahoo', function(){
 
        cy.visit('https://finance.yahoo.com/quote/6LG24.CME/history?p=6LG24.CME')
 
