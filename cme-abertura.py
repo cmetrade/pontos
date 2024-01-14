@@ -3,7 +3,7 @@ import time
 import os
 
 os.system("num=`awk {'print $1'} arquivos/cme-open.txt`")
-os.system("echo 'scale=3; 1/$num'|bc > arquivos/cme-open-convert.txt")
+os.system('echo "scale=3; 1/$num"|bc > arquivos/cme-open-convert.txt')
 with open("arquivos/cme-open-convert.txt", "r") as arquivo:
         result = arquivo.read()
 print(result)
