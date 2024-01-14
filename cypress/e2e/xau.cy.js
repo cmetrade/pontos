@@ -11,6 +11,10 @@ describe('XAU ', function (){
                 cy.log(text3.text())
                 cy.writeFile('arquivos/xau-max.txt', text3.text(), {flag: "a+"})
             })
+            cy.get(':nth-child(2) > .datatable_cell__LJp3C.font-normal').then(function(text4){
+                cy.log(text4.text())
+                cy.writeFile('arquivos/xau-fechamento.txt', text4.text(), {flag: "a+"})
+            })
     })
 })
    
