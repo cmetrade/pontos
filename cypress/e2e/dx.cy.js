@@ -2,7 +2,7 @@
 
 
 describe('DX', function (){
-    Cypress.config('defaultCommandTimeout', 100000);
+    Cypress.config('defaultCommandTimeout', 200000);
     it('DX', function(){
         cy.visit('https://br.investing.com/currencies/us-dollar-index-historical-data')
         
