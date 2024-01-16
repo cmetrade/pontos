@@ -1,13 +1,13 @@
 #!/bin/bash
 ./busca.sh
-python cme-abertura.py
-python cme-high.py
-python cme-low.py
-python cupom.py
-python usd-brl.py
-python dx-alta.py
-python dx-baixa.py
-python xau-alta.py
-python xau-baixa.py
-python maisum.py
-python menosum.py
+python3 cme-abertura.py
+python3 cme-high.py
+python3 cme-low.py
+python3 cupom.py
+python3 usd-brl.py
+python3 dx-alta.py
+python3 dx-baixa.py
+python3 xau-alta.py
+python3 xau-baixa.py
+python3 maisum.py
+python3 menosum.py
