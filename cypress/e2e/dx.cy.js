@@ -2,9 +2,13 @@
 
 
 describe('DX', function (){
-    Cypress.config('defaultCommandTimeout', 900000);
+   Cypress.config('defaultCommandTimeout', 50000);
     it('DX', function(){
-        cy.visit('https://br.investing.com/currencies/us-dollar-index-historical-data')
+
+        cy.visit("https://br.investing.com/currencies/us-dollar-index")
+
+        
+        //cy.visit('https://br.investing.com/currencies/us-dollar-index-historical-data')
         
         
             cy.get('.pid-8827-low').then(function(text1){
@@ -21,6 +25,6 @@ describe('DX', function (){
             cy.log(text3.text())
             cy.writeFile('arquivos/dx-fechamento.txt', text3.text())
            })
-
+    
     })
 })
