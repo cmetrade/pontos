@@ -2,7 +2,7 @@
 
 
 describe('WDOG24', function (){
-    Cypress.config('defaultCommandTimeout', 20000);
+    Cypress.config('defaultCommandTimeout', 60);
     it('capturar dados wdo', function(){
         cy.visit('https://br.advfn.com/bolsa-de-valores/bmf/WDOG24/cotacao')
             
