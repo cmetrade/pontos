@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 describe('XAU ', function (){
-
+    Cypress.config('defaultCommandTimeout', 60);
     it('capturar dados xau', function(){
        cy.visit('https://br.investing.com/currencies/xau-usd-historical-data')
             cy.get('tbody > :nth-child(1) > :nth-child(5)').then(function(text2){
