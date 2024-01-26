@@ -1,0 +1,24 @@
+#!/bin/bash
+cd ..
+mv cypress/e2e/* cypress/
+mv cypress/xau.cy.js cypress/e2e/
+npm install
+
+i=1
+
+while [[ $i -lt 11 ]] 
+do
+        npm start
+        if [ "$?" == '0' ]
+           then
+           if [ -s "arquivos/xau-max.txt" ]; then
+           
+           python pys/xau-alta.py
+           python pys/xau-baixa.py 
+           break
+           fi
+        fi
+echo $i
+((i++))
+done
+echo "$i tentativa(s)" > logs/xau.log
