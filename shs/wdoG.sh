@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/oficialnosdois/projetos/pontos
+cd ~/pontos
 mv cypress/e2e/* cypress/
 mv cypress/wdoG.cy.js cypress/e2e/
 npm install

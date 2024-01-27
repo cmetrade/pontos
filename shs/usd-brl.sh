@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/oficialnosdois/projetos/pontos
+cd ~/pontos
 mv cypress/e2e/* cypress/
 mv cypress/usd-brl.cy.js cypress/e2e/
 npm install
@@ -12,7 +12,7 @@ do
         if [ "$?" == '0' ]
            then
            if [ -s "arquivos/usd-brl-abertura.txt" ];then
-           python pys/usd-brl.py
+           python3 pys/usd-brl.py
            break
            fi
         fi

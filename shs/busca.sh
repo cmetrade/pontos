@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb bc
-cd /home/oficialnosdois/projetos/pontos
+cd ~/pontos
 rm arquivos/*.txt
 mv cypress/*.js cypress/e2e/
 mv cypress/e2e/cme.cy.js cypress/

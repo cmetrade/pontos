@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ..
+cd ~/pontos
 mv cypress/e2e/* cypress/
 mv cypress/xau.cy.js cypress/e2e/
 npm install
@@ -13,8 +13,8 @@ do
            then
            if [ -s "arquivos/xau-max.txt" ]; then
            
-           python pys/xau-alta.py
-           python pys/xau-baixa.py 
+           python3 pys/xau-alta.py
+           python3 pys/xau-baixa.py 
            break
            fi
         fi

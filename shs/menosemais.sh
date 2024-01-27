@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/projetos/pontos
+cd ~/pontos
 i=1
 arquivo="arquivos/fechamentoWDO.txt"
 
@@ -7,8 +7,8 @@ while [[ $i -lt 11 ]]
 do
         if [ -e "$arquivo" ]
            then
-           python /home/oficialnosdois/projetos/pontos/pys/maisum.py
-           python /home/oficialnosdois/projetos/pontos/pys/menosum.py
+           python3 /home/oficialnosdois/projetos/pontos/pys/maisum.py
+           python3 /home/oficialnosdois/projetos/pontos/pys/menosum.py
            break
         fi
 echo $i
