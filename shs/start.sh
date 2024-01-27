@@ -1,9 +1,8 @@
 #!/bin/bash
 #git pull
 #./busca.sh
-cd ~/pontos
-rm arquivos/*.txt
-rm logs/*.log
+rm ~/pontos/arquivos/*.txt
+rm ~/pontos/logs/*.log
 ./cupom.sh
 ./usd-brl.sh
 ./cme.sh
