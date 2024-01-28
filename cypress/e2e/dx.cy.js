@@ -2,15 +2,11 @@
 
 
 describe('DX', function (){
-   Cypress.config('defaultCommandTimeout', 50000);
+  //Cypress.config('defaultCommandTimeout', 300);
     it('DX', function(){
 
         cy.visit("https://br.investing.com/currencies/us-dollar-index")
 
-        
-        //cy.visit('https://br.investing.com/currencies/us-dollar-index-historical-data')
-        
-        
             cy.get('.pid-8827-low').then(function(text1){
                 cy.log(text1.text())
                 cy.writeFile('arquivos/dx-min.txt', text1.text())

@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 describe('CME', function (){
-Cypress.config('defaultCommandTimeout', 60);
+//Cypress.config('defaultCommandTimeout', 700);
     it('capturar dados cme yahoo', function(){
 
        cy.visit('https://finance.yahoo.com/quote/6LG24.CME/history?p=6LG24.CME')
