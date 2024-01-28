@@ -7,8 +7,8 @@ while [[ $i -lt 11 ]]
 do
         if [ -e "$arquivo" ]
            then
-           python3 /home/oficialnosdois/projetos/pontos/pys/maisum.py
-           python3 /home/oficialnosdois/projetos/pontos/pys/menosum.py
+           python3 pys/maisum.py
+           python3 pys/menosum.py
            break
         fi
 echo $i
