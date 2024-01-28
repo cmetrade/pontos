@@ -1,11 +1,21 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+
+  defaultCommandTimeout: 100000,
+  viewportWidth: 1000,
+  viewportHeight: 600,
+  pageLoadTimeout: 70000,
+
+  component: {
+    viewportWidth: 500,
+    viewportHeight: 500,
+  },
   
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
-      defaultCommandTimeout: 100000
+        //defaultCommandTimeout: 100000
+        pageLoadTimeout: 100000 
     },
   chromeWebSecurity: false
   },
