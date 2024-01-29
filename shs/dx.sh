@@ -17,6 +17,6 @@ do
            fi
         fi
 echo $i
+echo "$i tentativa(s)" > logs/dx.log
 ((i++))
 done
-echo "$i tentativa(s)" > logs/dx.log
