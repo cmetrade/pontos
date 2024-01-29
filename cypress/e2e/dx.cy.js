@@ -5,7 +5,8 @@ describe('DX', function (){
   //Cypress.config('defaultCommandTimeout', 300);
     it('DX', function(){
 
-        cy.visit("https://br.investing.com/currencies/us-dollar-index")
+      cy.visit("https://br.investing.com/currencies/us-dollar-index-historical-data")
+       // cy.visit("https://br.investing.com/currencies/us-dollar-index")
 
             cy.get('.pid-8827-low').then(function(text1){
                 cy.log(text1.text())
