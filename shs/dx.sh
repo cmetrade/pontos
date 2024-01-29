@@ -11,8 +11,8 @@ do
         npm start
         if [ "$?" == '0' ]; then
            if [ -s "arquivos/dx-fechamento.txt" ]; then
-              python pys/dx-alta.py
-              python pys/dx-baixa.py 
+              python3 pys/dx-alta.py
+              python3 pys/dx-baixa.py 
            break
            fi
         fi
