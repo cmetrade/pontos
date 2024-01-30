@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
 describe('WDOG - Abertura D -1', function (){
-
     it('capturar dados de abertura wdo', function(){
         cy.visit('https://br.investing.com/currencies/usd-brl-bmf-futures')
         
