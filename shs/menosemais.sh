@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ~/pontos
 i=1
-arquivo="arquivos/fechamentoWDO.txt"
+arquivo="arquivos/abrtura_d-1_WDO.txt"
 
 while [[ $i -lt 11 ]] 
 do
