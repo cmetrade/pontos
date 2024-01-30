@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/pontos
-arquivo="arquivos/abrtura_d-1_WDO.txt"
+arquivo="arquivos/fechamentoWDO.txt"
 
 i=1
 
@@ -12,6 +12,6 @@ do
            break
         fi
 echo "$i tentativa(s)"
-echo "$i tentativa(s)" > logs/dx.log
+echo "$i tentativa(s)" > logs/menosemais.log
 ((i++))
 done
