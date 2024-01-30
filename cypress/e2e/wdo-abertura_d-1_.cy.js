@@ -1,9 +1,8 @@
 /// <reference types="cypress" />
 
+describe('WDOG - Abertura D -1', function (){
 
-describe('WDOG24', function (){
-    //Cypress.config('defaultCommandTimeout', 100000);
-    it('capturar dados wdo', function(){
+    it('capturar dados de abertura wdo', function(){
         cy.visit('https://br.investing.com/currencies/usd-brl-bmf-futures')
         
         cy.get(':nth-child(4) > .float_lang_base_2').then(function(text2){
