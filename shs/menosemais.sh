@@ -11,7 +11,7 @@ do
            python3 pys/menosum.py
            break
         fi
-echo $i
+echo "$i tentativa(s)"
+echo "$i tentativa(s)" > logs/menosemais.log
 ((i++))
 done
-echo "$i tentativa(s)" > logs/menosemais.los
