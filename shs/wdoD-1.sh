@@ -1,6 +1,6 @@
 cd ~/pontos
 mv cypress/e2e/* cypress/
-mv cypress/wdo-abertura_d-1_.cy.js cypress/e2e/
+mv cypress/wdoD-1.cy.js cypress/e2e/
 npm install
 
 i=1
@@ -10,7 +10,7 @@ do
         npm start
         if [ "$?" == '0' ]
            then
-           if [ -s "arquivos/abertura_D-1_WDO.txt" ]; then
+           if [ -s "arquivos/wdoD-1.txt" ]; then
            break
            fi
         fi
