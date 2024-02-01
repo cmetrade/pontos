@@ -2,7 +2,6 @@
 
 
 describe('CUPOM', function (){
-
  it('get text using text method option 2', function(){
     cy.visit('https://sistemaswebb3-derivativos.b3.com.br/financialIndicatorsPage/')
 
