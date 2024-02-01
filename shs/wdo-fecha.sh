@@ -11,11 +11,11 @@ do
         npm start
         if [ "$?" == '0' ]
            then
-           if [ -s "arquivos/fechamentoWDO.txt" ]; then
+           if [ -s "arquivos/wdo-fecha.txt" ]; then
            break
            fi
         fi
 echo $i
 ((i++))
 done
-echo "$i tentativa(s)" >logs/fechamentoWDO.txt
+echo "$i tentativa(s)" >logs/wdo-fecha.txt

@@ -5,7 +5,7 @@ npm install
 
 i=1
 
-while [[ $i -lt 11 ]] 
+while [[ $i -lt 60 ]] 
 do
         npm start
         if [ "$?" == '0' ]
@@ -15,5 +15,5 @@ do
            fi
         fi
 echo "$i tentativa(s)"
-echo "$i tentativa(s)" >logs/abertura_D-1_WDO.log
+echo "$i tentativa(s)" >logs/wdoD-1.log
 done

@@ -8,6 +8,7 @@ rm ~/pontos/logs/*.log
 ./usd-brl.sh
 ./cme.sh
 ./wdo-fecha.sh
+./wdoD-1.sh
 ./menosemais.sh
 ./xau.sh
 ./dx.sh
