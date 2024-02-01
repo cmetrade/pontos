@@ -8,7 +8,7 @@ npm install
 
 i=1
 
-while [[ $i -lt 40 ]] 
+while [[ $i -lt 15 ]] 
 do
         npm start
         if [ "$?" == '0' ]
@@ -23,6 +23,8 @@ do
            fi
         fi
         echo "$i tentativa(s)"
+        echo "$i tentativa(s)" >  logs/cme.log
 ((i++))
 done
-echo "$i tentativa(s)" >  logs/cme.log
+mv package.json package-cme.json
+mv package.json.bkp package.json
