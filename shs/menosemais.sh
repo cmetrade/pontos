@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/pontos
-arquivo="arquivos/fechamentoWDO.txt"
+arquivo="arquivos/wdoD-1.txt"
 
 i=1
 
