@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('WDOG - Abertura D -1', function (){
+describe('WDOH - Abertura D -1', function (){
     it('capturar dados de abertura wdo', function(){
         cy.visit('https://br.advfn.com/bolsa-de-valores/bmf/WDOH24/historico')
        
