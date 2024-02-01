@@ -16,7 +16,7 @@ max = float(dxmaxima.replace('.','').replace(',','.'))
 numero = (max - fechamento) / fechamento  
 rounded_numero = round(numero, 3)
 
-with open("arquivos/fechamentoWDO.txt", "r") as arquivo:
+with open("arquivos/wdo-fecha.txt", "r") as arquivo:
         x = arquivo.read()
 
 #wdo = float(x) 
