@@ -16,7 +16,7 @@ do
            break
            fi
         fi
-echo $i
-((i++))
+echo "$i tentativa(s)"
 echo "$i tentativa(s)" > logs/usd-brl.log
+((i++))
 done

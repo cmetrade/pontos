@@ -17,7 +17,7 @@ do
            break
         fi
         fi
-echo $i
+echo "$i tentativa(s)"
+echo "$i tentativa(s)" > logs/cupom.log
 ((i++))
 done
-echo "$i tentativa(s)" > logs/cupom.log

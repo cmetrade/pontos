@@ -15,7 +15,7 @@ do
            break
            fi
         fi
-echo $i
+echo "$i tentativa(s)"
+echo "$i tentativa(s)" > logs/wdo-fecha.txt
 ((i++))
 done
-echo "$i tentativa(s)" >logs/wdo-fecha.txt
