@@ -2,7 +2,7 @@
 describe('CME', function (){
 //Cypress.config('defaultCommandTimeout', 700);
     it('capturar dados cme yahoo', function(){
-        cy.visit('https://www.cmegroup.com/markets/fx/emerging-market/brazilian-real.quotes.html#venue=globex', {   headers: {     "Accept-Encoding": "gzip, deflate"   } })
+        cy.visit('https://www.cmegroup.com/markets/fx/emerging-market/brazilian-real.quotes.html#venue=globex', {   headers: {     "Accept-Encoding": "gzip, deflate"   } }, { timeout: 80000 })
 
 
 
