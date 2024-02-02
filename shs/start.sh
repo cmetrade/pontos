@@ -12,3 +12,5 @@ rm ~/pontos/logs/*.log
 ./menosemais.sh
 ./xau.sh
 ./dx.sh
+./relatorio-concat.sh
+./relatorio.sh
