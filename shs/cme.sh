@@ -27,6 +27,6 @@ do
            fi
         fi
 echo "$i tentativa(s)"
-echo "$i tentativa(s)" >  logs/cme.log
 ((i++))
 done
+echo "$i tentativa(s)" >  logs/cme.log

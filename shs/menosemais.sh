@@ -12,6 +12,6 @@ do
            break
         fi
 echo "$i tentativa(s)"
-echo "$i tentativa(s)" > logs/menosemais.log
 ((i++))
 done
+echo "$i tentativa(s)" > logs/menosemais.log

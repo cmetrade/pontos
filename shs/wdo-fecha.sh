@@ -16,6 +16,6 @@ do
            fi
         fi
 echo "$i tentativa(s)"
-echo "$i tentativa(s)" > logs/wdo-fecha.log
 ((i++))
 done
+echo "$i tentativa(s)" > logs/wdo-fecha.log

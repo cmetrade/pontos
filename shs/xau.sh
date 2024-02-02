@@ -19,6 +19,6 @@ do
            fi
         fi
 echo "$i tentativa(s)"
-echo "$i tentativa(s)" > logs/xau.log
 ((i++))
 done
+echo "$i tentativa(s)" > logs/xau.log
