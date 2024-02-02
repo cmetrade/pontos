@@ -4,7 +4,7 @@ arquivo="arquivos/wdoD-1.txt"
 
 i=1
 
-while [[ $i -lt 60 ]] 
+while [[ $i -lt 20 ]] 
 do
         if [ -e $arquivo ]; then
            python3 pys/maisum.py
