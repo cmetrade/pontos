@@ -21,4 +21,3 @@ echo "$i tentativa(s)" > logs/dx.log
 ((i++))
 done
 
-#
