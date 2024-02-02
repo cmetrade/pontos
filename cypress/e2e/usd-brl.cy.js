@@ -21,7 +21,7 @@ describe('USD-BRL', function (){
             cy.log(text3.text())
             cy.writeFile('arquivos/usd-brl-min.txt', text3.text(), {flag: "a+"})
             })
-            //
+            
     })
 })
    

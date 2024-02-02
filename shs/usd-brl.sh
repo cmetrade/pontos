@@ -18,5 +18,5 @@ do
         fi
 echo $i
 ((i++))
-done
 echo "$i tentativa(s)" > logs/usd-brl.log
+done
