@@ -12,7 +12,8 @@ do
         npm start
         if [ "$?" == '0' ]
            then
-        if [ -s "arquivos/cupom.txt" ];then 
+        if [ -s "arquivos/cupom.txt" ];then
+           awk {'print $1,$3,$5'} arquivos/cupom.txt > arquivos/cupom2.txt 
            python3 pys/cupom.py
            break
         fi
