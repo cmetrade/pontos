@@ -18,4 +18,4 @@ do
 echo "$i tentativa(s)"
 ((i++))
 done
-echo "$i tentativa(s)" > logs/wdo-fecha.log
+echo "$i" > logs/wdo-fecha.log

@@ -19,4 +19,4 @@ do
 echo "$i tentativa(s)"
 ((i++))
 done
-echo "$i tentativa(s)" > logs/usd-brl.log
+echo "$i" > logs/usd-brl.log

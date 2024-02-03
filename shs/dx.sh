@@ -19,4 +19,4 @@ do
 echo "$i tentativa(s)"
 ((i++))
 done
-echo "$i tentativa(s)" > logs/dx.log
+echo "$i" > logs/dx.log

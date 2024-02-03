@@ -14,4 +14,4 @@ do
 echo "$i tentativa(s)"
 ((i++))
 done
-echo "$i tentativa(s)" > logs/menosemais.log
+echo "$i" > logs/menosemais.log

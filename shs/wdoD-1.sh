@@ -17,4 +17,4 @@ do
 echo "$i tentativa(s)"
 ((i++))
 done
-echo "$i tentativa(s)" > logs/wdoD-1.log
+echo "$i" > logs/wdoD-1.log

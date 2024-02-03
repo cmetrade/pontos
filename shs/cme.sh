@@ -29,4 +29,4 @@ do
 echo "$i tentativa(s)"
 ((i++))
 done
-echo "$i tentativa(s)" >  logs/cme.log
+echo "$i" >  logs/cme.log
