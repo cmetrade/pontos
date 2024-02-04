@@ -1,5 +1,6 @@
 #!/bin/bash
 cd ~/pontos/logs
+ptax=`cat ptax.log`
 cme=`cat cme.log`
 cupom=`cat cupom.log`
 dx=`cat dx.log`
@@ -11,6 +12,7 @@ xau=`cat xau.log`
 
 echo " " > relatorio.log
 echo " " >> relatorio.log
+echo "PTAX = $ptax" >> relatorio.log
 echo "CME = $cme" >> relatorio.log
 echo "CUPOM = $cupom" >> relatorio.log
 echo "MENOS E MAIS = $menosemais" >> relatorio.log
