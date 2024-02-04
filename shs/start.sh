@@ -10,8 +10,8 @@ rm ~/pontos/logs/*.log
 ./cme.sh
 ./wdo-fecha.sh
 ./wdoD-1.sh
-./menosemais.sh
 ./xau.sh
 ./dx.sh
+./menosemais.sh
 ./relatorio-concat.sh
 ./relatorio.sh
