@@ -4,7 +4,7 @@
 cd ~/pontos/shs
 rm ~/pontos/arquivos/*.txt
 rm ~/pontos/logs/*.log
-./ptax
+./ptax.sh
 ./cupom.sh
 ./usd-brl.sh
 ./cme.sh
