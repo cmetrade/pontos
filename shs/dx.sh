@@ -6,7 +6,7 @@ npm install
 
 i=1
 
-while [[ $i -lt 60 ]] 
+while [[ $i -lt 15 ]] 
 do
         npm start
         if [ "$?" == '0' ]; then
@@ -22,5 +22,6 @@ do
         fi
 echo "$i tentativa(s)"
 ((i++))
+echo "falhou" > logs/dx.log
 done
-echo "$i" > logs/dx.log
+echo "$i" >> logs/dx.log
