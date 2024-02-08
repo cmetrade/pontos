@@ -8,6 +8,7 @@ rm ~/pontos/logs/*.log
 ./wdoD-1.sh
 ./menosemais.sh
 ./ptax.sh
+./ptax-futuro.sh
 ./cupom.sh
 ./usd-brl.sh
 ./cme.sh
