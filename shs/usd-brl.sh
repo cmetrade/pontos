@@ -14,7 +14,7 @@ if [[ $dia == "Monday" ]] ; then
                 if [ "$?" == '0' ]
                 then
                         if [ -s "arquivos/usd-brl-abertura.txt" ];then
-                                python3 pys/usd-brl-segunda.py
+                        python3 pys/usd-brl-segunda.py
                         break
                         fi
                 fi
