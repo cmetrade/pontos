@@ -4,7 +4,7 @@ mv cypress/e2e/* cypress/
 dia=`date +"%A"`
 
 
-if [[ $dia == "Tuesday" ]] ; then
+if [[ $dia == "Monday" ]] ; then
    mv cypress/usd-brl-segunda.cy.js cypress/e2e/
    npm install
    i=1
