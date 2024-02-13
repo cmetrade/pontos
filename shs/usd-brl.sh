@@ -2,6 +2,8 @@
 cd ~/pontos
 mv cypress/e2e/* cypress/
 dia=`date +"%A"`
+
+
 if [[ $dia == "Tuesday" ]] ; then
    mv cypress/usd-brl-segunda.cy.js cypress/e2e/
    npm install
@@ -12,9 +14,9 @@ if [[ $dia == "Tuesday" ]] ; then
                 if [ "$?" == '0' ]
                 then
                         if [ -s "arquivos/usd-brl-abertura.txt" ];then
-                        python3 pys/usd-brl.py
-                break
-                         fi
+                                python3 pys/usd-brl.py
+                        break
+                        fi
                 fi
         echo "$i tentativa(s)"
         ((i++))
@@ -31,10 +33,10 @@ i=1
         npm start
         if [ "$?" == '0' ]
            then
-           if [ -s "arquivos/usd-brl-abertura.txt" ];then
+                if [ -s "arquivos/usd-brl-abertura.txt" ];then
                 python3 pys/usd-brl.py
-           break
-           fi
+                break
+                fi
         fi
         echo "$i tentativa(s)"
         ((i++))
