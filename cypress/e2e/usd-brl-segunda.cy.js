@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
-describe('USD-BRL', function (){
+describe('USD-BRL-SEGUNDA', function (){
 
-    it('USD-BRL', function(){
+    it('USD-BRL-SEGUNDA', function(){
        cy.visit('https://br.investing.com/currencies/usd-brl-historical-data')
 
             //abertura 
