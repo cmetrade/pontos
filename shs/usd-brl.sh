@@ -1,7 +1,7 @@
-#!/bin/bash
+104,#!/bin/bash
 cd ~/pontos
 mv cypress/e2e/* cypress/
-dia_semana="Tuesday"
+dia_semana="Monday"
 dia=`date +"%A"`
 
 
@@ -12,9 +12,11 @@ if [[ $dia == "$dia_semana" ]] ; then
         while [[ $i -lt 11 ]] 
         do
         npm start
-                if [ "$?" == '0' ] then
-                python3 pys/usd-brl-segunda.py
-                break
+                if [ "$?" == '0' ]
+                then
+                        python3 pys/usd-brl-segunda.py
+                       # exit 1
+                       break
                 fi
         echo "$i tentativa(s)"
         ((i++))
@@ -29,7 +31,8 @@ i=1
         while [[ $i -lt 11 ]] 
         do
         npm start
-        if [ "$?" == '0' ] ; then
+        if [ "$?" == '0' ]
+           then
                 python3 pys/usd-brl.py
                 break
         fi
