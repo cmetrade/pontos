@@ -1,9 +1,9 @@
 import pandas as pd 
 import time
 import os
-os.system("awk {'print $1'} arquivos/usd-brl-abertura.txt arquivos/usd-brl-max.txt arquivos/usd-brl-min.txt > arquivos/usd-brl.txt")
+os.system("awk {'print $1'} arquivos/usd-brl-segunda-abertura.txt arquivos/usd-brl-segunda-max.txt arquivos/usd-brl-segunda-min.txt > arquivos/usd-brl-segunda.txt")
 
-with open("arquivos/usd-brl.txt", "r") as arquivo:
+with open("arquivos/usd-brl-segunda.txt", "r") as arquivo:
         result = arquivo.read()
 print(result)
 import requests
