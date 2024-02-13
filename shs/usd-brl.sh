@@ -40,3 +40,4 @@ i=1
         ((i++))
         done
         echo "$i" > logs/usd-brl.log
+fi
