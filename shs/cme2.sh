@@ -8,8 +8,6 @@ i=1
 
 while [[ $i -lt 15 ]] 
 do
-        mv package.json package.json.bkp
-        mv package-cme.json package.json
         npm install
         npm start
         if [ "$?" == '0' ]
