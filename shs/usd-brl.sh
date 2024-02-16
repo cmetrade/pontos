@@ -1,4 +1,4 @@
-104,#!/bin/bash
+#!/bin/bash
 cd ~/pontos
 mv cypress/e2e/* cypress/
 dia_semana="Monday"
