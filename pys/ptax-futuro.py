@@ -2,7 +2,8 @@ import pandas as pd
 import time
 import os
 
-with open("arquivos/ptax-futuro.txt", "r") as arquivo:
+os.system("awk {'print $1'} arquivos/ptax-futuro.tx > arquivos/ptax-futuro2.txt")
+with open("arquivos/ptax-futuro2.txt", "r") as arquivo:
         result = arquivo.read()
 print(result)
 import requests
