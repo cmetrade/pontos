@@ -3,9 +3,11 @@ import time
 import os
 
 os.system("awk {'print $1'} arquivos/ptax-futuro.txt > arquivos/ptax-futuro2.txt")
+with open("arquivos/ptax.txt", "r") as arquivo:
+        ptax1 = arquivo.read()
 with open("arquivos/ptax-futuro2.txt", "r") as arquivo:
-        result = arquivo.read()
-print(result)
+        ptax2 = arquivo.read()
+print(ptax1 + ptax2)
 import requests
 TOKEN = "5779297459:AAE2k4xaLnQZW0MRSmu0OX3UYftw7vZishg"
 chat_id = "-1001546918854"
