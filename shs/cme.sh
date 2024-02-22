@@ -21,9 +21,6 @@ do
                 mv package.json package-cme.json
                 mv package.json.bkp package.json
            break
-           else
-                mv package.json package-cme.json
-                mv package.json.bkp package.json
            fi
         fi
 echo "$i tentativa(s)"
