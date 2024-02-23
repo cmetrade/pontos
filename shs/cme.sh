@@ -2,14 +2,13 @@
 cd ~/pontos/
 mv cypress/e2e/* cypress/
 mv cypress/cme.cy.js cypress/e2e/
-
+mv package.json package.json.bkp
+mv package-cme.json package.json
 
 i=1
 
 while [[ $i -lt 15 ]] 
 do
-        mv package.json package.json.bkp
-        mv package-cme.json package.json
         npm install
         npm start
         if [ "$?" == '0' ]
@@ -26,4 +25,6 @@ do
 echo "$i tentativa(s)"
 ((i++))
 done
+mv package.json package-cme.json
+mv package.json.bkp package.json
 echo "$i" >  logs/cme.log
