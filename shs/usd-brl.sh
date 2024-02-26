@@ -2,38 +2,17 @@
 #
 cd ~/pontos
 mv cypress/e2e/* cypress/
-dia_semana="Monday"
-dia=`date +"%A"`
-
-
-if [[ $dia == "$dia_semana" ]] ; then
-   mv cypress/usd-brl-segunda.cy.js cypress/e2e/
-   npm install
-   i=1
-        while [[ $i -lt 11 ]] 
-        do
-        npm start
-                if [ "$?" == '0' ]
-                then
-                        python3 pys/usd-brl-segunda.py
-                       # exit 1
-                       break
-                fi
-        echo "$i tentativa(s)"
-        ((i++))
-        done
-        echo "$i" > logs/usd-brl-segunda.log
-else
-
 mv cypress/usd-brl.cy.js cypress/e2e/
+
 npm install
 i=1
 
-        while [[ $i -lt 11 ]] 
+        while [[ $i -lt 11 ]]
         do
         npm start
         if [ "$?" == '0' ]
            then
+                ./shs/usd-brl-format.sh
                 python3 pys/usd-brl.py
                 break
         fi
