@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 cd ~/pontos
+rm arquivos/linha*
 mv cypress/e2e/* cypress/
 mv cypress/usd-brl.cy.js cypress/e2e/
 
@@ -20,4 +21,3 @@ i=1
         ((i++))
         done
         echo "$i" > logs/usd-brl.log
-fi
