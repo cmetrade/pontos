@@ -1,5 +1,6 @@
 #!/bin/bash
 cd ~/pontos/
+mv cypress/e2e/* cypress/
 mv cypress/dx.cy.js cypress/e2e/
 ls arquivos/dx-max.txt
 
