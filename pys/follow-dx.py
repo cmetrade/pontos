@@ -63,3 +63,61 @@ if result_max != result_max_old:
 else:
     print("igual")
 
+#######
+    
+# DX BAIXA
+
+with open("arquivos/dx-min.txt", "r") as dxmin:
+        dxminima = dxmin.read()
+
+min = float(dxminima.replace('.','').replace(',','.'))
+
+
+numero_min = (min - fechamento) / fechamento  
+rounded_numero_min = round(numero_min, 3)
+
+with open("arquivos/wdo-fecha.txt", "r") as arquivo_min:
+        x_min = arquivo_min.read()
+
+wdo_min = float(x_min.replace('.','').replace(',','.'))
+dxbaixa = rounded_numero_min
+number_min = wdo_min * (dxbaixa+1)
+rounded_number_min = round(number_min, 2)
+print(rounded_number_min)
+result_min = rounded_number_min
+
+# DX BAIXA OLD
+with open("arquivos/dx-min-old.txt", "r") as dxmin_old:
+        dxminima_old = dxmin_old.read()
+
+
+min_old = float(dxminima_old.replace('.','').replace(',','.'))
+
+
+numero_min_old = (min_old - fechamento) / fechamento  
+rounded_numero_min_old = round(numero_min_old, 3)
+
+with open("arquivos/wdo-fecha.txt", "r") as arquivo_min_old:
+        x_min_old = arquivo_min_old.read()
+
+wdo_min_old = float(x_min_old.replace('.','').replace(',','.'))
+dxbaixa_old = rounded_numero_min_old
+number_min_old = wdo_min_old * (dxbaixa_old+1)
+rounded_number_min_old = round(number_min_old, 2)
+print(rounded_number_min_old)
+result_min_old = rounded_number_min_old
+
+
+if result_min != result_min_old:
+    print('O valor do DX MIN é {:.3f}'.format(result_min))
+    import requests
+    TOKEN = "5779297459:AAE2k4xaLnQZW0MRSmu0OX3UYftw7vZishg"
+    chat_id = "-1001546918854"
+    message = "DX de baixa alterado para"
+    result = '{:.3f}'.format(result_min)
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message} {result_min}"
+    print(requests.get(url).json()) # this sends the message
+    pass
+
+else:
+    print("igual")   
