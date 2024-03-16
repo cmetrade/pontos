@@ -8,9 +8,11 @@ describe('DX', function (){
       cy.visit("https://br.investing.com/currencies/us-dollar-index-historical-data")
        // cy.visit("https://br.investing.com/currencies/us-dollar-index")
 
-            cy.get('.pid-8827-low').then(function(text1){
-                cy.log(text1.text())
-                cy.writeFile('arquivos/dx-min.txt', text1.text())
+
+       
+           cy.get('.pid-8827-low').then(function(text1){
+            cy.log(text1.text())
+            cy.writeFile('arquivos/dx-min.txt', text1.text())
            })
 
            cy.get('.pid-8827-high').then(function(text2){
@@ -22,6 +24,10 @@ describe('DX', function (){
             cy.log(text3.text())
             cy.writeFile('arquivos/dx-fechamento.txt', text3.text())
            })
-    
+           
+           cy.get('#last_last').then(function(text4){
+            cy.log(text4.text())
+            cy.writeFile('arquivos/dx-abertura.txt', text4.text())
+           })
     })
 })
