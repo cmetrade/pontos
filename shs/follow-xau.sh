@@ -16,6 +16,7 @@ count=1
         while [ $valid ]
         do
             python3 pys/follow-xau.py
+            rm arquivos/xau-fechamento.txt
             mv arquivos/xau-max.txt arquivos/xau-max-old.txt
             mv arquivos/xau-min.txt arquivos/xau-min-old.txt
             npm start
