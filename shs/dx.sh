@@ -15,7 +15,8 @@ do
               dxmin=`cat arquivos/dx-min.txt`
                   if [ $dxmax != $dxmin ]; then
                      python3 pys/dx-alta.py
-                     python3 pys/dx-baixa.py 
+                     python3 pys/dx-baixa.py
+                     python3 pys/dx-abertura.py 
                      break
                   fi
            fi

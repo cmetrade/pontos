@@ -16,3 +16,7 @@ rm ~/pontos/logs/*.log
 ./dx.sh
 ./relatorio-concat.sh
 ./relatorio.sh
+mv cypress/e2e/* cypress/
+mv cypress/cme.cy.js cypress/e2e/
+mv cypress/xau.cy.js cypress/e2e/
+mv cypress/dx.cy.js cypress/e2e/
