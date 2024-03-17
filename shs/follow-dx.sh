@@ -5,6 +5,7 @@ ls arquivos/dx-max.txt
     if [ $? -eq 0 ]; then
        mv arquivos/dx-max.txt arquivos/dx-max-old.txt
        mv arquivos/dx-low.txt arquivos/dx-low-old.txt
+       mv arquivos/dx-abertura.txt arquivos/dx-abertura-old.txt
        npm start
     fi
 
@@ -16,6 +17,7 @@ count=1
             python3 pys/follow-dx.py
             mv arquivos/dx-max.txt arquivos/dx-max-old.txt
             mv arquivos/dx-min.txt arquivos/dx-min-old.txt
+            mv arquivos/dx-abertura.txt arquivos/dx-abertura-old.txt
             npm start
 
             if [ $count -eq 15 ];

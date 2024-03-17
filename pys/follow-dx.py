@@ -63,7 +63,7 @@ if result_max != result_max_old:
 else:
     print("igual")
 
-#######
+#######№#####################################№#####################################№##############################
     
 # DX BAIXA
 
@@ -116,6 +116,65 @@ if result_min != result_min_old:
     message = "DX de baixa alterado para"
     result = '{:.3f}'.format(result_min)
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message} {result_min}"
+    print(requests.get(url).json()) # this sends the message
+    pass
+
+else:
+    print("igual")   
+
+#######№#####################################№#####################################№###########################
+    
+#DX ABERTURA
+
+with open("arquivos/dx-abertura.txt", "r") as dxabe:
+        dxabertura = dxabe.read()
+
+abe = float(dxabertura.replace('.','').replace(',','.'))
+
+
+numero_abe = (abe - fechamento) / fechamento  
+rounded_numero_abe = round(numero_abe, 3)
+
+with open("arquivos/wdo-fecha.txt", "r") as arquivo_abe:
+        x_abe = arquivo_abe.read()
+
+wdo_abe = float(x_abe.replace('.','').replace(',','.'))
+dxopen = rounded_numero_abe
+number_abe = wdo_abe * (dxopen+1)
+rounded_number_abe = round(number_abe, 2)
+print(rounded_number_abe)
+result_abe = rounded_number_abe
+
+# DX ABERTURA OLD
+with open("arquivos/dx-abertura-old.txt", "r") as dxabe_old:
+        dxabertura_old = dxabe_old.read()
+
+
+abe_old = float(dxabertura_old.replace('.','').replace(',','.'))
+
+
+numero_abe_old = (abe_old - fechamento) / fechamento  
+rounded_numero_abe_old = round(numero_abe_old, 3)
+
+with open("arquivos/wdo-fecha.txt", "r") as arquivo_abe_old:
+        x_abe_old = arquivo_abe_old.read()
+
+wdo_abe_old = float(x_abe_old.replace('.','').replace(',','.'))
+dxopen_old = rounded_numero_abe_old
+number_abe_old = wdo_abe_old * (dxopen_old+1)
+rounded_number_abe_old = round(number_abe_old, 2)
+print(rounded_number_abe_old)
+result_abe_old = rounded_number_abe_old
+
+
+if result_abe != result_abe_old:
+    print('O valor do DX ABERTURA é {:.3f}'.format(result_min))
+    import requests
+    TOKEN = "5779297459:AAE2k4xaLnQZW0MRSmu0OX3UYftw7vZishg"
+    chat_id = "-1001546918854"
+    message = "DX de abertura alterado para"
+    result = '{:.3f}'.format(result_min)
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message} {result_abe}"
     print(requests.get(url).json()) # this sends the message
     pass
 
