@@ -1,7 +1,5 @@
 #!/bin/bash
 cd ~/pontos/
-mv cypress/e2e/* cypress/
-mv cypress/xau.cy.js cypress/e2e/
 ls arquivos/xau-max.txt
 
     if [ $? -eq 0 ]; then

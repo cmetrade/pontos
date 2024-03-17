@@ -1,7 +1,5 @@
 #!/bin/bash
 cd ~/pontos/
-mv cypress/e2e/* cypress/
-mv cypress/dx.cy.js cypress/e2e/
 ls arquivos/dx-max.txt
 
     if [ $? -eq 0 ]; then
@@ -15,7 +13,7 @@ count=1
 
         while [ $valid ]
         do
-            python pys/follow-dx.py
+            python3 pys/follow-dx.py
             mv arquivos/dx-max.txt arquivos/dx-max-old.txt
             mv arquivos/dx-min.txt arquivos/dx-min-old.txt
             npm start
