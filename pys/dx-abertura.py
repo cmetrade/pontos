@@ -22,7 +22,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo:
 #wdo = float(x) 
 wdo = float(x.replace('.','').replace(',','.'))
 dxopen = rounded_numero
-number = wdo * (dxabertura+1)
+number = wdo * (dxopen+1)
 rounded_number = round(number, 2)
 print(rounded_number)
 result = rounded_number
