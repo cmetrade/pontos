@@ -13,6 +13,8 @@ count=1
 
         while [ $valid ]
         do
+            mv cypress/e2e/* cypress/
+            mv cypress/xau.cy.js cypress/e2e/
             python3 pys/follow-xau.py
             rm arquivos/xau-fechamento.txt
             mv arquivos/xau-max.txt arquivos/xau-max-old.txt
