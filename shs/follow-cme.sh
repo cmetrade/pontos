@@ -16,6 +16,8 @@ count=1
 
         while [ $valid ]
         do
+            mv cypress/e2e/* cypress/
+            mv cypress/cme.cy.js cypress/e2e/
             python3 pys/follow-cme.py
             mv arquivos/cme-high.txt arquivos/cme-high-old.txt
             mv arquivos/cme-low.txt arquivos/cme-low-old.txt

@@ -16,6 +16,8 @@ count=1
 
         while [ $valid ]
         do
+            mv cypress/e2e/* cypress/
+            mv cypress/dx.cy.js cypress/e2e/
             python3 pys/follow-dx.py
             mv arquivos/dx-max.txt arquivos/dx-max-old.txt
             mv arquivos/dx-min.txt arquivos/dx-min-old.txt
