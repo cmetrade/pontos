@@ -15,7 +15,7 @@ max = float(dxmaxima.replace('.','').replace(',','.'))
 
 
 numero = (max - fechamento) / fechamento  
-rounded_numero = round(numero, 3)
+rounded_numero = numero
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo:
         x = arquivo.read()
@@ -23,7 +23,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo:
 wdo = float(x.replace('.','').replace(',','.'))
 dxalta = rounded_numero
 number = wdo * (dxalta+1)
-rounded_number = round(number, 2)
+rounded_number = number
 print(rounded_number)
 result_max = rounded_number
 
@@ -36,7 +36,7 @@ max_old = float(dxmaxima_old.replace('.','').replace(',','.'))
 
 
 numero_old = (max_old - fechamento) / fechamento  
-rounded_numero_old = round(numero_old, 3)
+rounded_numero_old = numero_old
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo_old:
         x_old = arquivo_old.read()
@@ -44,7 +44,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo_old:
 wdo_old = float(x_old.replace('.','').replace(',','.'))
 dxalta_old = rounded_numero_old
 number_old = wdo_old * (dxalta_old+1)
-rounded_number_old = round(number_old, 2)
+rounded_number_old = number_old
 print(rounded_number_old)
 result_max_old = rounded_number_old
 
@@ -74,7 +74,7 @@ min = float(dxminima.replace('.','').replace(',','.'))
 
 
 numero_min = (min - fechamento) / fechamento  
-rounded_numero_min = round(numero_min, 3)
+rounded_numero_min = numero_min
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo_min:
         x_min = arquivo_min.read()
@@ -82,7 +82,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo_min:
 wdo_min = float(x_min.replace('.','').replace(',','.'))
 dxbaixa = rounded_numero_min
 number_min = wdo_min * (dxbaixa+1)
-rounded_number_min = round(number_min, 2)
+rounded_number_min = number_min
 print(rounded_number_min)
 result_min = rounded_number_min
 
@@ -95,7 +95,7 @@ min_old = float(dxminima_old.replace('.','').replace(',','.'))
 
 
 numero_min_old = (min_old - fechamento) / fechamento  
-rounded_numero_min_old = round(numero_min_old, 3)
+rounded_numero_min_old = numero_min_old
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo_min_old:
         x_min_old = arquivo_min_old.read()
@@ -103,7 +103,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo_min_old:
 wdo_min_old = float(x_min_old.replace('.','').replace(',','.'))
 dxbaixa_old = rounded_numero_min_old
 number_min_old = wdo_min_old * (dxbaixa_old+1)
-rounded_number_min_old = round(number_min_old, 2)
+rounded_number_min_old = number_min_old
 print(rounded_number_min_old)
 result_min_old = rounded_number_min_old
 
@@ -133,7 +133,7 @@ abe = float(dxabertura.replace('.','').replace(',','.'))
 
 
 numero_abe = (abe - fechamento) / fechamento  
-rounded_numero_abe = round(numero_abe, 3)
+rounded_numero_abe = numero_abe
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo_abe:
         x_abe = arquivo_abe.read()
@@ -141,7 +141,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo_abe:
 wdo_abe = float(x_abe.replace('.','').replace(',','.'))
 dxopen = rounded_numero_abe
 number_abe = wdo_abe * (dxopen+1)
-rounded_number_abe = round(number_abe, 2)
+rounded_number_abe = number_abe
 print(rounded_number_abe)
 result_abe = rounded_number_abe
 
@@ -154,7 +154,7 @@ abe_old = float(dxabertura_old.replace('.','').replace(',','.'))
 
 
 numero_abe_old = (abe_old - fechamento) / fechamento  
-rounded_numero_abe_old = round(numero_abe_old, 3)
+rounded_numero_abe_old = numero_abe_old
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo_abe_old:
         x_abe_old = arquivo_abe_old.read()
@@ -162,7 +162,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo_abe_old:
 wdo_abe_old = float(x_abe_old.replace('.','').replace(',','.'))
 dxopen_old = rounded_numero_abe_old
 number_abe_old = wdo_abe_old * (dxopen_old+1)
-rounded_number_abe_old = round(number_abe_old, 2)
+rounded_number_abe_old = number_abe_old
 print(rounded_number_abe_old)
 result_abe_old = rounded_number_abe_old
 

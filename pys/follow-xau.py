@@ -15,7 +15,7 @@ max = float(xaumaxima.replace('.','').replace(',','.'))
 
 
 numero = (max - fechamento) / fechamento  
-rounded_numero = round(numero, 3)
+rounded_numero = numero
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo:
         x = arquivo.read()
@@ -23,7 +23,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo:
 wdo = float(x.replace('.','').replace(',','.'))
 xaualta = rounded_numero
 number = wdo * (xaualta+1)
-rounded_number = round(number, 2)
+rounded_number = number
 print(rounded_number)
 result_max = rounded_number
 
@@ -36,7 +36,7 @@ max_old = float(xaumaxima_old.replace('.','').replace(',','.'))
 
 
 numero_old = (max_old - fechamento) / fechamento  
-rounded_numero_old = round(numero_old, 3)
+rounded_numero_old = numero_old
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo_old:
         x_old = arquivo_old.read()
@@ -44,7 +44,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo_old:
 wdo_old = float(x_old.replace('.','').replace(',','.'))
 xaualta_old = rounded_numero_old
 number_old = wdo_old * (xaualta_old+1)
-rounded_number_old = round(number_old, 2)
+rounded_number_old = number_old
 print(rounded_number_old)
 result_max_old = rounded_number_old
 
@@ -74,7 +74,7 @@ min = float(xauminima.replace('.','').replace(',','.'))
 
 
 numero_min = (min - fechamento) / fechamento  
-rounded_numero_min = round(numero_min, 3)
+rounded_numero_min = numero_min
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo_min:
         x_min = arquivo_min.read()
@@ -82,7 +82,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo_min:
 wdo_min = float(x_min.replace('.','').replace(',','.'))
 xaubaixa = rounded_numero_min
 number_min = wdo_min * (xaubaixa+1)
-rounded_number_min = round(number_min, 2)
+rounded_number_min = number_min
 print(rounded_number_min)
 result_min = rounded_number_min
 
@@ -95,7 +95,7 @@ min_old = float(xauminima_old.replace('.','').replace(',','.'))
 
 
 numero_min_old = (min_old - fechamento) / fechamento  
-rounded_numero_min_old = round(numero_min_old, 3)
+rounded_numero_min_old = numero_min_old
 
 with open("arquivos/wdo-fecha.txt", "r") as arquivo_min_old:
         x_min_old = arquivo_min_old.read()
@@ -103,7 +103,7 @@ with open("arquivos/wdo-fecha.txt", "r") as arquivo_min_old:
 wdo_min_old = float(x_min_old.replace('.','').replace(',','.'))
 xaubaixa_old = rounded_numero_min_old
 number_min_old = wdo_min_old * (xaubaixa_old+1)
-rounded_number_min_old = round(number_min_old, 2)
+rounded_number_min_old = number_min_old
 print(rounded_number_min_old)
 result_min_old = rounded_number_min_old
 

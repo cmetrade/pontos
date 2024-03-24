@@ -4,7 +4,7 @@ ls arquivos/xau-max.txt
 
     if [ $? -eq 0 ]; then
        mv arquivos/xau-max.txt arquivos/xau-max-old.txt
-       mv arquivos/xau-low.txt arquivos/xau-low-old.txt
+       mv arquivos/xau-min.txt arquivos/xau-min-old.txt
        npm start
     fi
 
