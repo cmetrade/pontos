@@ -17,8 +17,8 @@ do
                 python3 pys/cme-abertura.py
                 python3 pys/cme-high.py
                 python3 pys/cme-low.py
-                #cp package.json package-cme.json
-                #cp package.json.bkp package.json
+                cp package.json package-cme.json
+                cp package.json.bkp package.json
            break
            fi
         fi
