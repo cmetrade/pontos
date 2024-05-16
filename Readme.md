@@ -11,5 +11,6 @@ sudo apt install python3;
 sudo apt install python3-pip -y; 
 cd /usr/lib/python3.11; 
 sudo rm EXTERNALLY-MANAGED; 
-pip install --upgrade pandas; 
+pip install --upgrade pandas;
+sudo apt-get install firefox-esr; 
 chmod +x shs/*; 
