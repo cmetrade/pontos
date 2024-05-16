@@ -1,5 +1,5 @@
-sudo apt updade; 
-sudo apt install git
+sudo apt-get updade; 
+sudo apt-get install git;
 sudo apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb; 
 git clone https://github.com/cmetrade/pontos; 
 cd pontos; 
