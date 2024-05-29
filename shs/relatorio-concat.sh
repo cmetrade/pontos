@@ -1,5 +1,6 @@
 #!/bin/bash
 cd ~/pontos/logs
+amplitude=`cat amplitude.log`
 ptax=`cat ptax.log`
 cme=`cat cme.log`
 cupom=`cat cupom.log`
