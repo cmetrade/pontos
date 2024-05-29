@@ -13,6 +13,7 @@ xau=`cat xau.log`
 
 echo " " > relatorio.log
 echo " " >> relatorio.log
+echo "AMPLITUDE = $amplitude" >> relatorio.log
 echo "PTAX = $ptax" >> relatorio.log
 echo "CME = $cme" >> relatorio.log
 echo "CUPOM = $cupom" >> relatorio.log
