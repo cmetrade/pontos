@@ -6,6 +6,7 @@ rm ~/pontos/arquivos/*.txt
 rm ~/pontos/logs/*.log
 ./wdo-fecha.sh
 ./wdoD-1.sh
+./amplitude.sh
 ./menosemais.sh
 ./ptax.sh
 ./ptax-futuro.sh
