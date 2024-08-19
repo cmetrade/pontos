@@ -24,14 +24,11 @@ describe('WDO', function (){
           };
           
         var letra = Object.values(object1)[mes] 
-        cy.visit('https://br.investing.com/currencies/usd-brl-mini-futures-historical-data')
-        cy.get('.bold > :nth-child(1) > [dir="ltr"]').then(function(text2){
-        
-        //cy.visit(`https://br.advfn.com/bolsa-de-valores/bmf/WDO${letra}${ano}/historico`)
+        cy.visit(`https://br.advfn.com/bolsa-de-valores/bmf/WDO${letra}${ano}/historico`)
        // cy.visit('https://br.advfn.com/bolsa-de-valores/bmf/WDOM24/historico')
             
         //cy.get(':nth-child(8) > table > tbody > :nth-child(2) > :nth-child(2)').then(function(text2){
-       // cy.get('[comp-id="164"] > .ag-cell-wrapper > .ag-cell-value').then(function(text2){    
+        cy.get('[comp-id="164"] > .ag-cell-wrapper > .ag-cell-value').then(function(text2){    
                cy.log(text2.text())
                cy.writeFile('arquivos/wdo-fecha.txt', text2.text())
            })

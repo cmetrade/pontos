@@ -3,7 +3,7 @@ import time
 import os
 
 
-with open("arquivos/wdoD-1.txt", "r") as arquivo:
+with open("arquivos/wdoD-2.txt", "r") as arquivo:
         x = arquivo.read()
 
 wdo = float(x.replace('.','').replace(',','.'))
