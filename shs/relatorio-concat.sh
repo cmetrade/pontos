@@ -8,7 +8,7 @@ dx=`cat dx.log`
 menosemais=`cat menosemais.log`
 usdbrl=`cat usd-brl.log`
 wdofecha=`cat wdo-fecha.log`
-wdoD1=`cat wdoD-1.log`
+wdoD1=`cat wdoD-2.log`
 xau=`cat xau.log`
 
 echo " " > relatorio.log
