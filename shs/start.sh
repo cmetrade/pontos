@@ -14,7 +14,6 @@ rm ~/pontos/logs/*.log
         if [ $? -eq 0 ]; then
                 ./wdo-fecha.sh
                 ./wdoD-2.sh
-                ./amplitude.sh
                 ./menosemais.sh
                 ./ptax.sh
                 ./ptax-futuro.sh
