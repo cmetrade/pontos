@@ -23,7 +23,7 @@ count=1
             mv arquivos/cme-low.txt arquivos/cme-low-old.txt
             npm start
 
-            if [ $count -eq 15 ];
+            if [ $count -eq 5 ];
             then
             break
             fi

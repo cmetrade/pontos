@@ -24,7 +24,7 @@ count=1
             mv arquivos/dx-abertura.txt arquivos/dx-abertura-old.txt
             npm start
 
-            if [ $count -eq 15 ];
+            if [ $count -eq 5 ];
             then
             break
             fi

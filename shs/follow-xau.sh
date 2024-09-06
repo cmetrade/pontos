@@ -21,7 +21,7 @@ count=1
             mv arquivos/xau-min.txt arquivos/xau-min-old.txt
             npm start
 
-            if [ $count -eq 15 ];
+            if [ $count -eq 5 ];
             then
             break
             fi

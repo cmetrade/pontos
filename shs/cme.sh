@@ -7,7 +7,7 @@ cp package-cme.json package.json
 
 i=1
 
-while [[ $i -lt 15 ]] 
+while [[ $i -lt 5 ]] 
 do
         npm install
         npm start

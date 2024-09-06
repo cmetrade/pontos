@@ -8,7 +8,7 @@ mv cypress/usd-brl.cy.js cypress/e2e/
 npm install
 i=1
 
-        while [[ $i -lt 11 ]]
+        while [[ $i -lt 5 ]]
         do
         npm start
         if [ "$?" == '0' ]
