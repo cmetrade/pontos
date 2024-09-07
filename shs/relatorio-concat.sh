@@ -1,6 +1,5 @@
 #!/bin/bash
 cd ~/pontos/logs
-amplitude=`cat amplitude.log`
 ptax=`cat ptax.log`
 cme=`cat cme.log`
 cupom=`cat cupom.log`
@@ -13,7 +12,6 @@ xau=`cat xau.log`
 
 echo " " > relatorio.log
 echo " " >> relatorio.log
-echo "AMPLITUDE = $amplitude" >> relatorio.log
 echo "PTAX = $ptax" >> relatorio.log
 echo "CME = $cme" >> relatorio.log
 echo "CUPOM = $cupom" >> relatorio.log
