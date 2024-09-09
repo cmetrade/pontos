@@ -21,4 +21,7 @@ then
            ./relatorio-concat.sh
            ./relatorio.sh
            echo `date '+%d%m%Y'` > ~/pontos/arquivos/rodou.txt
+
+   else
+           echo "Script ja rodou hoje" 
 fi
