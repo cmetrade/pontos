@@ -6,7 +6,7 @@ npm install
 
 i=1
 
-while [[ $i -lt 5 ]] 
+while [[ $i -lt 10 ]] 
 do
         npm start
         if [ "$?" == '0' ]
