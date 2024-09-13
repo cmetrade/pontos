@@ -10,6 +10,7 @@ then
            rm ~/pontos/logs/*.log
            ./wdo-fecha.sh
            ./wdoD-2.sh
+           ./xau-fechamento.sh
            ./menosemais.sh
            ./ptax.sh
            ./ptax-futuro.sh
