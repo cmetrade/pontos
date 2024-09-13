@@ -1,5 +1,6 @@
 #!/bin/bash
 cd ~/pontos
+rm arquivos/xau-max.txt arquivos/xau-min.txt
 mv cypress/e2e/* cypress/
 mv cypress/xau.cy.js cypress/e2e/
 npm install
