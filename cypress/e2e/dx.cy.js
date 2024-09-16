@@ -17,7 +17,7 @@ describe('DX', function (){
             cy.writeFile('arquivos/dx-max.txt', text2.text())
            })
 
-           cy.get(':nth-child(2) > :nth-child(5) > span').then(function(text3){
+           cy.get('tbody > :nth-child(1) > :nth-child(5) > span').then(function(text3){
             cy.log(text3.text())
             cy.writeFile('arquivos/dx-fechamento.txt', text3.text())
            })
