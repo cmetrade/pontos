@@ -7,7 +7,7 @@ describe('DX', function (){
 
        cy.visit("https://br.financas.yahoo.com/quote/DX-Y.NYB/history/")
        
-           cy.get('tbody > :nth-child(1) > :nth-child(4) > span').then(function(text1){
+          cy.get('tbody > :nth-child(1) > :nth-child(4) > span').then(function(text1){
             cy.log(text1.text())
             cy.writeFile('arquivos/dx-min.txt', text1.text())
            })
