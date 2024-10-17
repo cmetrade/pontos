@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="icon" href="images/favicon-64.png" sizes="64x64" type="image/png">
+    <title>PONTOS MATINAL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #020202;
+            background-image: url('images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .file-card {
+            background-color: rgb(2, 2, 2);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-card h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .top-left-box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 110px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .pagination button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left-box" id="top-left-box"></div>
+
+    <div class="file-container" id="file-container"></div>
+
+    <div class="pagination">
+        <button id="prevBtn" onclick="prevDay()">Anterior</button>
+        <button id="nextBtn" onclick="nextDay()">Próxima</button>
+    </div>
+
+    <script>
+        const files = [
+            "2024-10-08-maisum.txt", "2024-10-08-menosum.txt", "2024-10-08-ptax-ptaxfut.txt",
+            "2024-10-08-cupom2.txt", "2024-10-08-usd-brl.txt", "2024-10-08-cme-alta.txt", "2024-10-08-cme-baixa.txt",
+            "2024-10-09-xau-alta.txt", "2024-10-09-xau-baixa.txt", "2024-10-09-dx-openn.txt", "2024-10-09-dx-alta.txt", "2024-10-09-dx-baixa.txt",
+            "2024-10-09-relatorio.txt"
+        ];
+
+        const customLabels = [
+            "MAIS UM", "MENOS UM", "PTAX + FUTURO",
+            "CUPOM", "USD-BRL", "CME - ALTA", "CME - BAIXA", "XAU-MAX",
+            "XAU-MIN", "DX - ABERTURA", "DX - MAX", "DX - MIN",
+            "RELATORIO"
+        ];
+
+        // Agrupa arquivos por data
+        const filesByDate = {};
+
+        files.forEach((file, index) => {
+            const date = file.split('-').slice(0, 3).join('-'); // Extrai a data do nome do arquivo (YYYY-MM-DD)
+            if (!filesByDate[date]) {
+                filesByDate[date] = [];
+            }
+            filesByDate[date].push({
+                name: file,
+                label: customLabels[index]
+            });
+        });
+
+        const dates = Object.keys(filesByDate); // Array com as datas
+        let currentDayIndex = 0; // Controla o índice do dia atual
+
+        const fileContainer = document.getElementById('file-container');
+
+        // Função para carregar os arquivos de um determinado dia
+        function loadFilesByDate() {
+            fileContainer.innerHTML = ''; // Limpa o conteúdo anterior
+
+            const currentDayFiles = filesByDate[dates[currentDayIndex]];
+
+            currentDayFiles.forEach(file => {
+                fetch('arquivos/' + file.name)
+                    .then(response => response.text())
+                    .then(data => {
+                        const fileCard = document.createElement('div');
+                        fileCard.className = 'file-card';
+
+                        const fileTitle = document.createElement('h3');
+                        fileTitle.textContent = file.label;
+
+                        const fileContent = document.createElement('pre');
+                        fileContent.textContent = data;
+
+                        fileCard.appendChild(fileTitle);
+                        fileCard.appendChild(fileContent);
+                        fileContainer.appendChild(fileCard);
+                    })
+                    .catch(error => {
+                        console.error('Error reading file:', file.name, error);
+                    });
+            });
+
+            // Atualiza o estado dos botões de navegação
+            document.getElementById('prevBtn').disabled = currentDayIndex === 0;
+            document.getElementById('nextBtn').disabled = currentDayIndex === dates.length - 1;
+        }
+
+        // Função para navegar para o próximo dia
+        function nextDay() {
+            if (currentDayIndex < dates.length - 1) {
+                currentDayIndex++;
+                loadFilesByDate();
+            }
+        }
+
+        // Função para navegar para o dia anterior
+        function prevDay() {
+            if (currentDayIndex > 0) {
+                currentDayIndex--;
+                loadFilesByDate();
+            }
+        }
+
+        // Carregar a primeira data ao iniciar
+        loadFilesByDate();
+
+        // Carrega o conteúdo da caixa no canto superior esquerdo
+        const topLeftBox = document.getElementById('top-left-box');
+        fetch('arquivos/data.txt')
+            .then(response => response.text())
+            .then(data => {
+                topLeftBox.textContent = data;
+            })
+            .catch(error => {
+                console.error('Error loading file for top-left box:', error);
+                topLeftBox.textContent = 'Error loading content';
+            });
+    </script>
+
+</body>
+</html>

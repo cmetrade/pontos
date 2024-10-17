@@ -1,0 +1,1 @@
+s3fs andrericardo.cloud:/pontos/arquivos ~/pontos/arquivos -o use_cache=/tmp -o use_path_request_style -o url=https://s3.amazonaws.com

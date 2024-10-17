@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos Web</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 50, 0.8);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1200px;
+            border-radius: 8px;
+            flex-grow: 1;
+        }
+
+        .date-selector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .date-selector input {
+            padding: 10px;
+            font-size: 1.2em;
+            border: 2px solid #ff3333;
+            border-radius: 5px;
+            color: #333;
+        }
+
+        .file-blocks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .file-block {
+            background-color: #1f1f3f;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 23%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .file-block h3 {
+            color: #ff3333;
+        }
+
+        .file-block p {
+            color: #ddd;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 10px;
+            color: #fff;
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="date-selector">
+        <label for="date">Select a date: </label>
+        <input type="date" id="date">
+        <button onclick="loadFiles()">Load Files</button>
+    </div>
+
+    <div class="file-blocks" id="file-blocks">
+        <!-- Os arquivos .txt aparecerão aqui -->
+    </div>
+</div>
+
+<footer>
+    ©André Ricardo Todos os direitos reservados | +55 (11) 93033-0606
+</footer>
+
+<script>
+    function loadFiles() {
+        const dateInput = document.getElementById('date').value;
+        if (!dateInput) {
+            alert('Please select a date.');
+            return;
+        }
+
+        // Formatar a data como yyyy-mm-dd
+        const formattedDate = new Date(dateInput).toISOString().split('T')[0];
+        const directory = `arquivos/${formattedDate}/`;
+
+        // Nomes dos arquivos
+        const fileNames = [
+            "maisum.txt", "menosum.txt", "ptax-ptaxfut.txt", 
+            "cupom2.txt", "usd-brl.txt", "cme-baixa.txt", "cme-alta.txt", 
+            "xau-max.txt", "xau-min.txt", "dx-openn.txt", 
+            "dx-alta.txt", "dx-baixa.txt", "relatorio.txt"
+        ];
+
+        // Títulos dos blocos
+        const blockTitles = [
+            "MAIS UM", "MENOS UM", "PTAX + FUTURO", 
+            "CUPOM", "USD - BRL", "CME - BAIXA", "CME - ALTA", 
+            "XAU-MAX", "XAU-MIN", "DX - ABERTURA", 
+            "DX - MAX", "DX - MIN", "RELATORIO"
+        ];
+
+        // Limpar blocos existentes
+        const fileBlocksContainer = document.getElementById('file-blocks');
+        fileBlocksContainer.innerHTML = '';
+
+        // Carregar cada arquivo .txt do diretório
+        fileNames.forEach((fileName, index) => {
+            const filePath = directory + fileName;
+
+            fetch(filePath)
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error('File not found');
+                    }
+                })
+                .then(fileContent => {
+                    const fileBlock = document.createElement('div');
+                    fileBlock.className = 'file-block';
+
+                    const fileTitle = document.createElement('h3');
+                    fileTitle.innerText = blockTitles[index];  // Usar o título correspondente
+                    const fileText = document.createElement('p');
+                    fileText.innerText = fileContent;
+
+                    fileBlock.appendChild(fileTitle);
+                    fileBlock.appendChild(fileText);
+                    fileBlocksContainer.appendChild(fileBlock);
+                })
+                .catch(error => {
+                    const fileBlock = document.createElement('div');
+                    fileBlock.className = 'file-block';
+
+                    const fileTitle = document.createElement('h3');
+                    fileTitle.innerText = blockTitles[index];  // Usar o título correspondente
+                    const fileText = document.createElement('p');
+                    fileText.innerText = `Could not load ${fileName}: ${error.message}`;
+
+                    fileBlock.appendChild(fileTitle);
+                    fileBlock.appendChild(fileText);
+                    fileBlocksContainer.appendChild(fileBlock);
+                });
+        });
+    }
+</script>
+
+</body>
+</html>

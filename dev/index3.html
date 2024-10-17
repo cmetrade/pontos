@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="icon" href="images/favicon-64.png" sizes="64x64" type="image/png">
+    <link rel="icon" href="images/favicon-48.png" sizes="48x48" type="image/png">
+    <title>PONTOS MATINAL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #020202;
+            background-image: url('images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .file-card {
+            background-color: rgb(2, 2, 2);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-card h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .top-left-box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 110px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .pagination button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left-box" id="top-left-box"></div>
+
+    <div class="file-container" id="file-container"></div>
+
+    <div class="pagination">
+        <button id="prevBtn" onclick="prevPage()">Anterior</button>
+        <button id="nextBtn" onclick="nextPage()">Próxima</button>
+    </div>
+
+    <script>
+        const files = [
+            "arquivos/maisum.txt", "arquivos/menosum.txt", "arquivos/ptax-ptaxfut.txt",
+            "arquivos/cupom2.txt", "arquivos/usd-brl.txt", "arquivos/cme-alta.txt", "arquivos/cme-baixa.txt",
+            "arquivos/xau-alta.txt", "arquivos/xau-baixa.txt", "arquivos/dx-openn.txt", "arquivos/dx-alta.txt", "arquivos/dx-baixa.txt",
+            "arquivos/relatorio.txt"
+        ];
+
+        const customLabels = [
+            "MAIS UM", "MENOS UM", "PTAX + FUTURO",
+            "CUPOM", "USD-BRL", "CME - ALTA", "CME - BAIXA", "XAU-MAX",
+            "XAU-MIN", "DX - ABERTURA", "DX - MAX", "DX - MIN",
+            "RELATORIO"
+        ];
+
+        const fileContainer = document.getElementById('file-container');
+        const filesPerPage = 13; // Número de arquivos por página
+        let currentPage = 1;
+        const totalPages = Math.ceil(files.length / filesPerPage);
+
+        // Função para carregar os arquivos com paginação
+        function loadFiles() {
+            fileContainer.innerHTML = ""; // Limpa os arquivos anteriores
+
+            const start = (currentPage - 1) * filesPerPage;
+            const end = start + filesPerPage;
+
+            const filesToShow = files.slice(start, end);
+            filesToShow.forEach((file, index) => {
+                const fileIndex = start + index; // Índice correto no array original
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        const fileCard = document.createElement('div');
+                        fileCard.className = 'file-card';
+                        
+                        const fileTitle = document.createElement('h3');
+                        fileTitle.textContent = customLabels[fileIndex];
+                        
+                        const fileContent = document.createElement('pre');
+                        fileContent.textContent = data;
+                        
+                        fileCard.appendChild(fileTitle);
+                        fileCard.appendChild(fileContent);
+                        fileContainer.appendChild(fileCard);
+                    })
+                    .catch(error => {
+                        console.error('Error reading file:', file, error);
+                    });
+            });
+
+            // Atualiza os botões de paginação
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+        }
+
+        // Função para ir para a próxima página
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                loadFiles();
+            }
+        }
+
+        // Função para voltar para a página anterior
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                loadFiles();
+            }
+        }
+
+        // Carregar a primeira página ao carregar o script
+        loadFiles();
+
+        // Carrega o conteúdo da caixa no canto superior esquerdo
+        const topLeftBox = document.getElementById('top-left-box');
+        fetch('arquivos/data.txt')
+            .then(response => response.text())
+            .then(data => {
+                topLeftBox.textContent = data;
+            })
+            .catch(error => {
+                console.error('Error loading file for top-left box:', error);
+                topLeftBox.textContent = 'Error loading content';
+            });
+    </script>
+
+</body>
+</html>
