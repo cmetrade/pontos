@@ -8,12 +8,12 @@ then
            cd ~/pontos/shs
            rm ~/pontos/arquivos/*.txt
            rm ~/pontos/logs/*.log
-           ./wdoD-2.sh
-           ./menosemais.sh
            ./ptax.sh
            ./ptax-futuro.sh
            ./cupom.sh
            ./cme.sh
+           ./wdoD-2.sh
+           ./menosemais.sh
            ./usd-brl.sh
            ./wdo-fecha.sh
            ./xau-fechamento.sh
