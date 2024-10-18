@@ -2,7 +2,7 @@
 describe('XAU ', function (){
    
     it('capturar dados xau', function(){
-        /*
+        
         cy.visit('https://br.advfn.com/bolsa-de-valores/pm/XAUUSD/cotacao')
        
         
@@ -15,7 +15,7 @@ describe('XAU ', function (){
                 cy.log(text3.text())
                 cy.writeFile('arquivos/xau-max.txt', text3.text(), {flag: "a+"})
             })
-        */
+       /* 
 
             cy.visit('https://br.investing.com/currencies/xau-usd-historical-data')
             
@@ -27,7 +27,7 @@ describe('XAU ', function (){
                 cy.log(text3.text())
                 cy.writeFile('arquivos/xau-max.txt', text3.text(), {flag: "a+"})
             })
+*/
 
     })
 })
-   
