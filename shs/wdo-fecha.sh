@@ -13,6 +13,7 @@ do
         if [ "$?" == '0' ]
            then
            if [ -s "arquivos/wdo-fecha.txt" ]; then
+           ./shs/ajuste-package-json.sh
            break
            fi
         fi
