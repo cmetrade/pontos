@@ -9,6 +9,7 @@ usdbrl=`cat usd-brl.log`
 wdofecha=`cat wdo-fecha.log`
 wdoD1=`cat wdoD-2.log`
 xau=`cat xau.log`
+hora=`date '+%R'`
 
 echo " " > relatorio.log
 echo " " >> relatorio.log
@@ -21,5 +22,6 @@ echo "FECHAMENTO WDO = $wdofecha" >> relatorio.log
 echo "WDO D -1 = $wdoD1" >> relatorio.log
 echo "XAU = $xau" >> relatorio.log
 echo "DX = $dx" >> relatorio.log
+echo "HORA = $hora" >> relatorio.log
 echo " " >> relatorio.log
 echo " " >> relatorio.log
