@@ -1,4 +1,4 @@
-import boto3
+import boto3 # type: ignore
 import time
 
 ec2 = boto3.client('ec2')
