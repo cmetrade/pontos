@@ -25,6 +25,7 @@ then
            ./move-txt.sh
            ./clear-cache.sh
            echo `date '+%d%m%Y'` > ~/pontos/arquivos/rodou.txt
+           ./remove-instances.sh
 
 
    else
